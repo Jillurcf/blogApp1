@@ -9,13 +9,14 @@ import {
   View,
 } from 'react-native';
 import Sound from 'react-native-sound';
-import { data } from './index';
+import { allCategories } from './index';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Icon from '../../assets/images/Icon.svg';
 
 const { width, height } = Dimensions.get('window');
 
 const Music = () => {
+  // console.log("199++++++++++++++++++++", category)
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentSound, setCurrentSound] = useState(null);
   const [playingIndex, setPlayingIndex] = useState(null);
@@ -82,7 +83,7 @@ const Music = () => {
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingLeft: 0 }}>
         <View style={{ gap: height * 0.015 }}>
-          {data.map((category, index) => (
+          {allCategories.map((category, index) => (
             <View
               style={{
                 borderRadius: 10,
